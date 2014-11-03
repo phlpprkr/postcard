@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var messageLabel: UILabel!
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var enterNameTextField: UITextField!
     @IBOutlet var enterMessageTextField: UITextField!
     @IBOutlet var mailButton: UIButton!
@@ -33,6 +33,14 @@ class ViewController: UIViewController {
         // Don't want to break anything
         messageLabel.hidden = false
         messageLabel.text = enterMessageTextField.text
+        
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextField.text
+        nameLabel.textColor = UIColor.blueColor()
+        
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
+        
         enterMessageTextField.text = ""
         enterMessageTextField.resignFirstResponder()
         messageLabel.textColor = UIColor.redColor()
